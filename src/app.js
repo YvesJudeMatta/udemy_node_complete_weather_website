@@ -8,6 +8,7 @@ const geocode = require('../utils/geocode');
 
 // Create express app
 const app = express()
+const PORT = process.env.PORT || 3000;
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -112,6 +113,6 @@ app.get('*', (req, res) => {
 
 // running server is asynchronous
 // web server never going to stop unless we stop it
-app.listen(3000, () => {
-  console.log('Server is up on port 3000.')
+app.listen(PORT, () => {
+  console.log('Server is up on port ' + PORT + '.')
 })
